@@ -3,7 +3,7 @@
 ## 📌 Overview
 This project analyzes sales and profit performance using an interactive Power BI dashboard.  
 The goal is to identify trends, top-performing categories, and business opportunities.
-
+This project simulates a real-world business analysis scenario.
 ---
 
 ## 🛠 Tools Used
