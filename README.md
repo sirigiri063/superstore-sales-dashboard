@@ -40,7 +40,7 @@ Segment Filter — Consumer / Corporate / Home Office slicer
 
 
 📷 Dashboard Preview
-Show Image
+screenshot.png
 
 🔍 Key Findings
 FindingBusiness ImplicationTechnology drives the highest profit margin (~17%) despite mid-tier sales volumePrioritise tech category in promotions — it punches above its weightFurniture has the 2nd highest sales but the lowest profit margin (~2.5%)Pricing or discount policy on furniture needs reviewWest region is the most profitable; Central region has the lowest marginsRegional pricing strategy or cost structure warrants investigationConsumer segment accounts for ~51% of revenue but places the most individual ordersHigh-volume, moderate-value customers — loyalty programme opportunitySales peak in Q4 (Nov–Dec) across all yearsInventory and staffing should be scaled up for Q4 demand
