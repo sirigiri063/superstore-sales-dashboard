@@ -1,56 +1,186 @@
-📊 Superstore Sales & Profit Dashboard
+# 📊 Superstore Sales & Profit Dashboard
 
-An interactive Power BI dashboard analysing 4 years of retail data across 793 transactions — surfacing the product categories and regions that drive profit, and those quietly destroying it.
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
 
+> An end-to-end business intelligence project analyzing sales, profit, and customer segmentation across regions and product categories — built with Excel, SQL, and Power BI.
 
-🎯 Business Problem
-Retail businesses often celebrate high revenue categories without realising those same categories may be unprofitable. This project was built to answer a simple but critical business question:
+---
 
-"Where is the business actually making money — and where is it losing it despite strong sales?"
+## 📌 Table of Contents
 
+- [Overview](#-overview)
+- [Key Insights](#-key-insights)
+- [Dashboard Preview](#-dashboard-preview)
+- [Project Structure](#-project-structure)
+- [Tools & Technologies](#-tools--technologies)
+- [Dashboard Features](#-dashboard-features)
+- [Data Pipeline](#-data-pipeline)
+- [SQL Analysis](#-sql-analysis)
+- [How to Run](#-how-to-run)
+- [Author](#-author)
 
-🛠️ Tools & Stack
-ToolPurposeExcelData cleaning, null handling, derived columnsSQLExploratory analysis, aggregations, segmentationPower BIInteractive dashboard, KPI cards, DAX measures
+---
 
-⚙️ Project Workflow
-1. Data Cleaning (Excel)
+## 🧭 Overview
 
-Removed duplicate transaction records
-Standardised date formats and category labels
-Handled missing values in the Profit and Discount columns
-Created derived field: Profit Margin % per order
+This project simulates a real-world retail business analytics scenario using the **Superstore dataset** — a commonly used benchmark dataset representing a fictional US-based retail company.
 
-2. Data Analysis (SQL)
-Key queries written to answer:
+The goal is to answer business-critical questions:
+- Which product categories and regions drive the most revenue?
+- Where are we losing money?
+- Who are our most valuable customer segments?
+- How is performance trending over time?
 
-Which product categories generate the most profit (not just revenue)?
-Which regions are most and least profitable?
-What is the monthly sales trend over the 4-year period?
-Which customer segments drive the highest order volume?
+The project covers the full data analytics workflow — from raw data cleaning in Excel, exploratory analysis in SQL, to final storytelling in an interactive Power BI dashboard.
 
-3. Dashboard (Power BI)
-Built a single-page interactive dashboard with:
+---
 
-KPI Cards — Total Sales, Total Profit, Total Orders, Average Profit Margin
-Sales by Category — bar chart with profit margin overlay
-Profit by Region — map and bar chart combination
-Monthly Sales Trend — 4-year line chart with seasonality visible
-Top 5 Products by Profit — horizontal bar
-Segment Filter — Consumer / Corporate / Home Office slicer
+## 💡 Key Insights
 
+| # | Insight |
+|---|---------|
+| 1 | 🏆 **Consumer segment** generates the highest sales volume across all regions |
+| 2 | 💻 **Technology** is the top revenue-driving category |
+| 3 | 🌍 **West region** has the highest overall profitability |
+| 4 | ⚠️ Several products in the **Furniture** category operate at a net loss |
+| 5 | 📈 Sales show a consistent **upward trend** year-over-year |
+| 6 | 🔻 Some high-revenue products have **negative profit margins** — a key risk area |
 
-📷 Dashboard Preview
-screenshot.png
+---
 
-🔍 Key Findings
-FindingBusiness ImplicationTechnology drives the highest profit margin (~17%) despite mid-tier sales volumePrioritise tech category in promotions — it punches above its weightFurniture has the 2nd highest sales but the lowest profit margin (~2.5%)Pricing or discount policy on furniture needs reviewWest region is the most profitable; Central region has the lowest marginsRegional pricing strategy or cost structure warrants investigationConsumer segment accounts for ~51% of revenue but places the most individual ordersHigh-volume, moderate-value customers — loyalty programme opportunitySales peak in Q4 (Nov–Dec) across all yearsInventory and staffing should be scaled up for Q4 demand
+## 📷 Dashboard Preview
 
-📁 Project Files
-FileDescriptiondashboard.pbixPower BI dashboard filedataset.xlsxCleaned dataset used for analysissql_queries.sqlSQL queries for exploratory analysisproject_document.docxFull project documentationscreenshot.pngDashboard preview image
+![Dashboard Screenshot](assets/screenshot.png)
 
-💡 What I Learned
-This project reinforced how misleading top-line revenue can be. Furniture had strong sales and weak profits — a pattern that would be invisible in a simple revenue report but immediately clear once profit margin was overlaid. The ability to ask "profitable, not just popular" is what separates useful analysis from vanity metrics.
+> *Interactive Power BI dashboard showing KPIs, category breakdown, regional profit, and monthly trends.*
 
-👤 Author
-Sirigiri Malakonda Reddy — Business Analyst
-LinkedIn · GitHub
+---
+
+## 📁 Project Structure
+
+```
+superstore-sales-dashboard/
+│
+├── 📂 data/
+│   └── dataset.xlsx              # Cleaned source data (Excel)
+│
+├── 📂 sql/
+│   └── sql_queries.sql           # All SQL queries with comments
+│
+├── 📂 reports/
+│   └── dashboard.pbix            # Power BI dashboard file
+│
+├── 📂 docs/
+│   └── project_document.docx     # Full project documentation
+│
+├── 📂 assets/
+│   └── screenshot.png            # Dashboard preview image
+│
+└── README.md                     # You are here
+```
+
+---
+
+## 🛠 Tools & Technologies
+
+| Tool | Purpose |
+|------|---------|
+| **Microsoft Excel** | Data cleaning, formatting, and initial exploration |
+| **SQL (PostgreSQL syntax)** | Data querying, aggregation, and business logic |
+| **Power BI Desktop** | Interactive dashboard and data visualization |
+
+---
+
+## 📊 Dashboard Features
+
+The Power BI dashboard (`reports/dashboard.pbix`) includes:
+
+- **KPI Cards** — Total Sales, Total Profit, Total Orders at a glance
+- **Sales by Category** — Bar chart comparing Furniture, Office Supplies, and Technology
+- **Profit by Region** — Ranked view of the four US regions
+- **Monthly Sales Trend** — Time-series line chart showing growth patterns
+- **Segment-wise Sales** — Breakdown by Consumer, Corporate, and Home Office
+- **Top 5 Products by Sales** — Highlights highest revenue-generating items
+- **Loss-making Products** — Identifies products with negative profit
+
+---
+
+## 🔄 Data Pipeline
+
+```
+Raw Dataset (Excel)
+      │
+      ▼
+Data Cleaning (Excel)
+  - Remove duplicates
+  - Handle nulls
+  - Standardize date formats
+  - Validate column types
+      │
+      ▼
+SQL Analysis (PostgreSQL)
+  - Aggregations by category, region, segment
+  - Profit/loss identification
+  - Top-N product queries
+      │
+      ▼
+Power BI Dashboard
+  - Import cleaned data
+  - Build calculated measures
+  - Design visuals and layout
+  - Publish interactive report
+```
+
+---
+
+## 🔍 SQL Analysis
+
+All queries are in [`sql/sql_queries.sql`](sql/sql_queries.sql). Key analyses performed:
+
+- Total sales, profit, and order count (summary KPIs)
+- Sales breakdown by product category
+- Profit ranking by region
+- West region deep-dive filter
+- Products with negative profit margins
+- Top 5 products by revenue
+- Category performance within the West region
+- High-value orders (Sales > $1,000)
+- Unprofitable orders in the West
+- Multi-category product filter
+
+---
+
+## ▶️ How to Run
+
+### Power BI Dashboard
+1. Download [`reports/dashboard.pbix`](reports/dashboard.pbix)
+2. Open with **Power BI Desktop** (free download at [powerbi.microsoft.com](https://powerbi.microsoft.com))
+3. If prompted, update the data source path to point to `data/dataset.xlsx`
+4. Click **Refresh** to reload the data
+
+### SQL Queries
+1. Import `data/dataset.xlsx` into your SQL database as a table named `superstore_data`
+2. Open [`sql/sql_queries.sql`](sql/sql_queries.sql) in your SQL editor
+3. Run queries individually or as a batch
+
+---
+
+## 👤 Author
+
+**Sirigiri Malakonda Reddy**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=flat&logo=github)](https://github.com/sirigiri063)
+
+---
+
+## 📄 License
+
+This project uses the publicly available Superstore dataset for educational and portfolio purposes.
+
+---
+
+*Built as a portfolio project to demonstrate end-to-end data analytics skills.*
